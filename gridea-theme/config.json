@@ -1,0 +1,26 @@
+{
+  "name": "陪跑者主题",
+  "description": "与陪跑者官网风格一致的Gridea主题",
+  "author": "陪跑者",
+  "version": "1.0.0",
+  "themeConfig": [
+    {
+      "name": "logoText",
+      "label": " Logo文字",
+      "type": "text",
+      "default": "陪跑者"
+    },
+    {
+      "name": "wechat",
+      "label": " 微信号",
+      "type": "text",
+      "default": "peipaozhe2025"
+    },
+    {
+      "name": "icpNo",
+      "label": " ICP备案号",
+      "type": "text",
+      "default": "蜀ICP备xxxxx号"
+    }
+  ]
+}

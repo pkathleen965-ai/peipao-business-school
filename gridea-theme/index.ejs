@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= site.title %></title>
+    <meta name="description" content="<%= site.description %>">
+    <link rel="stylesheet" href="<%= themeRouter %>/css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="<%= themeRouter %>/">
+                    <span class="logo-dot"></span>
+                    <span class="logo-text"><%= site.logoText || '陪跑者' %></span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="<%= themeRouter %>/">首页</a></li>
+                    <li><a href="<%= themeRouter %>/about.html">关于我们</a></li>
+                    <li><a href="<%= themeRouter %>/tools.html">工具介绍</a></li>
+                    <li><a href="<%= themeRouter %>/service.html">陪伴方式</a></li>
+                    <li><a href="<%= themeRouter %>/start.html">开始陪跑</a></li>
+                    <li><a href="<%= themeRouter %>/notes/">知识陪伴</a></li>
+                </ul>
+            </nav>
+            <a href="<%= themeRouter %>/start.html" class="cta-btn outline">预约诊断</a>
+            <button class="nav-toggle" aria-label="切换导航菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- Hero区 -->
+        <section class="hero">
+            <div class="container">
+                <h1><%= site.title %></h1>
+                <p class="subtitle"><%= site.subtitle || '' %></p>
+                <p class="trust-text"><%= site.description %></p>
+                <a href="<%= themeRouter %>/start.html" class="cta-btn primary">约一次诊断，聊半小时 →</a>
+                <p class="assist-text">首次诊断免费 · 40分钟深度沟通 · 不满意不收费</p>
+            </div>
+        </section>
+
+        <!-- 文章列表 -->
+        <section class="notes-section">
+            <div class="container">
+                <h2 class="section-title">知识陪伴</h2>
+                <div class="notes-grid">
+                    <% posts.forEach(function(post){ %>
+                    <div class="note-card">
+                        <span class="note-tag"><%= post.category || '老板闭门笔记' %></span>
+                        <h3><a href="<%= themeRouter %>/<%= post.link %>"><%= post.title %></a></h3>
+                        <p><%= post.content.substring(0, 100) %>...</p>
+                        <p class="note-date"><%= post.created %></p>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 底部 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-dot"></span>
+                    <span class="logo-text"><%= site.logoText || '陪跑者' %></span>
+                </div>
+                <div class="footer-links">
+                    <a href="<%= themeRouter %>/">首页</a>
+                    <a href="<%= themeRouter %>/about.html">关于我们</a>
+                    <a href="<%= themeRouter %>/tools.html">工具介绍</a>
+                    <a href="<%= themeRouter %>/service.html">陪伴方式</a>
+                    <a href="<%= themeRouter %>/start.html">开始陪跑</a>
+                    <a href="<%= themeRouter %>/notes/">知识陪伴</a>
+                </div>
+                <div class="footer-contact">
+                    <div class="wechat-qr">
+                        <div class="qr-placeholder">微信二维码</div>
+                    </div>
+                    <p>微信号：<%= site.wechat || 'peipaozhe2025' %></p>
+                </div>
+                <div class="footer-info">
+                    <p>© <%= site.year || '2026' %> <%= site.logoText || '陪跑者' %>  |  <%= site.icpNo || '蜀ICP备xxxxx号' %></p>
+                </div>
+            </div>
+            <div class="footer-bottom"></div>
+        </div>
+    </footer>
+
+    <script src="<%= themeRouter %>/js/main.js"></script>
+</body>
+</html>
